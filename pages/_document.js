@@ -31,18 +31,6 @@ class MyDocument extends Document {
             href="/favicons/favicon-192x192.png"
             sizes="192x192"
           ></link>
-
-          <meta name="twitter:card" content="summary_large_image"></meta>
-          <meta
-            property="og:image"
-            content="https://scoreboarder.xyz/opengraph.jpg"
-          ></meta>
-
-          <script
-            defer
-            data-domain="scoreboarder.xyz"
-            src="/js/script.js"
-          ></script>
         </Head>
         <body>
           <Main />

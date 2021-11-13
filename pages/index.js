@@ -11,33 +11,8 @@ import Header from "../components/Header";
 import SectionContactUs from "../components/SectionContactUs";
 import Footer from "../components/Footer";
 
-
-const tables = {
-  "Öhl Häfv": [
-  {
-    pos: 1,
-    name: "Tian",
-    score: 30
-  },
-  {
-    pos: 2,
-    name: "Charter",
-    score: 40
-  },
-  ],  
-  "Smash Turnering": [
-  {
-    pos: 1,
-    name: "Bottle",
-    score: 30
-  },
-  {
-    pos: 2,
-    name: "Tian",
-    score: 39
-  },
-  ],  
-}
+import data from "./data.json"
+import LeaderboardGroup from '../components/LeaderboardGroup';
 
 
 export default function Home() {
@@ -46,15 +21,11 @@ export default function Home() {
     <div className="w-full xl:w-3/4 max-w-6xl flex flex-col space-y-32">
       <Nav />
       <Header />
-      <div>
-      {
-        Object.keys(tables).map(board => (
-          <Leaderboard title={board} participants={tables[board]}/>
-        ))
-      }
+      <div className="flex flex-col items-center">
+      <LeaderboardGroup data={data}/>
+      </div>
       <Footer />
 
-    </div>
     </div>
   </main>
   );

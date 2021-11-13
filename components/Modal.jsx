@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import styled from 'styled-components'
 import Button from "./Button"
 
+
 const Modal = () => { 
 
   const [getTitle, setGetTitle] = useState(true)
@@ -39,7 +40,7 @@ const Modal = () => {
     let _persons = [...persons, person]
     board[title] = _persons
     setPersons(_persons)
-    console.log(board)
+
   }
 
   const handleCancel = (event) => {
