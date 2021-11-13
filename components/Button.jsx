@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Button({ children, type, props}) {
+export default function Button({ children, type, onClick, props}) {
   const types = {
     primary: "text-white bg-primary hover:bg-primaryDarker",
     secondary: "text-black bg-secondary hover:bg-secondaryDarker",
@@ -15,6 +15,7 @@ export default function Button({ children, type, props}) {
         types[type]
       }
       type="button"
+      onClick={onClick}
     >
       <span className="font-semibold">{children}</span>
     </button>
