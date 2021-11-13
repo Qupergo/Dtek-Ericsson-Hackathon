@@ -1,17 +1,13 @@
-import styled from 'styled-components'
-
 const Row = ({person}) => (
-<table>
-  <tr>
+  <tr className="bg-primaryLighter border-b border-gray-600">
     {
       Object.keys(person).map(e => {
         return (
-          <th>{person[e]}</th>
+          <td className="px-4 py-3">{person[e]}</td>
         )
       })
     }
   </tr>
-</table>
 )
 
 export default Row

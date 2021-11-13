@@ -8,8 +8,8 @@ const Modal = () => {
 
   return (
     <StyledPopup
-        trigger={<button className="button">Create</button>}
-        modal
+    trigger={<button className="button button py-2 px-4 rounded-lg inline-flex flex-row items-center space-x-2 duration-200 text-black hover:bg-secondary"><span className="font-semibold">Create</span></button>}
+    modal
         closeOnDocumentClick
     >
       <form>
