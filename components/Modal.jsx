@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import styled from 'styled-components'
 import Button from "./Button"
 
+
 const Modal = () => { 
 
   const [getTitle, setGetTitle] = useState(true)
@@ -50,7 +51,6 @@ const Modal = () => {
         {getTitle ? 
           <form className="flex flex-col items-center" onSubmit={getTitle ? handleTitleSubmission : handlePersonSubmission}>
             <div className="flex flex-row items-center border-b border-primary py-2">
-              <label for="title">Leaderboard name:</label><br />
               <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Leaderboard Name" aria-label="Leaderboard Name" type="text" id="title" name="title" onChange={handleTitleChange} value={getTitle ? title : ""}/>
               <Button type="primary" onClick={handleTitleSubmission}>Next</Button>
               <Button type="light" onClick={handleCancel}>Cancel</Button>

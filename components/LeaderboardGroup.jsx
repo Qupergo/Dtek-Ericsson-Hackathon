@@ -1,7 +1,10 @@
-export default function LeaderboardGroup() {
-    return <div className="flex flex-col items-center">
-        {Object.keys(tables).map(board => (
-          <Leaderboard title={board} participants={tables[board]}/>
+import Leaderboard from "./Leaderboard"
+
+
+export default function LeaderboardGroup({data}) {
+    return <div className="flex flex-row items-center">
+        {Object.keys(data).map(board => (
+          <Leaderboard title={board} participants={data[board]}/>
         ))}
     </div>;
   }
