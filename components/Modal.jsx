@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components'
+import Button from "./Button"
 
 const Modal = () => { 
 
@@ -42,15 +43,18 @@ const Modal = () => {
 
   return (
     <StyledPopup
-    trigger={<button className="button button py-2 px-4 rounded-lg inline-flex flex-row items-center space-x-2 duration-200 text-black hover:bg-secondary"><span className="font-semibold">Create</span></button>}
+    trigger={
+      props => <span><Button type="light" props={{...props}}>Create</Button></span>}
     modal
     >
         {getTitle ? 
-          <form onSubmit={getTitle ? handleTitleSubmission : handlePersonSubmission}>
+          <form className="flex flex-col items-center" onSubmit={getTitle ? handleTitleSubmission : handlePersonSubmission}>
+            <div className="flex flex-row items-center border-b border-primary py-2">
               <label for="title">Leaderboard name:</label><br />
-              <input type="text" id="title" name="title" onChange={handleTitleChange} value={getTitle ? title : ""}/><br />
-              <button onClick={handleTitleSubmission}>Next</button>
-              <button onClick={handleCancel}>Cancel</button>
+              <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Leaderboard Name" aria-label="Leaderboard Name" type="text" id="title" name="title" onChange={handleTitleChange} value={getTitle ? title : ""}/>
+              <Button type="primary" onClick={handleTitleSubmission}>Next</Button>
+              <Button type="light" onClick={handleCancel}>Cancel</Button>
+            </div>
           </form>
               :
             <form>
