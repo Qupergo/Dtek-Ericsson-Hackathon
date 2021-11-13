@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components'
+import Button from "./Button"
 
 const Modal = () => { 
   const [table, setTable] = useState({});
@@ -8,17 +9,17 @@ const Modal = () => {
 
   return (
     <StyledPopup
-    trigger={<button className="button button py-2 px-4 rounded-lg inline-flex flex-row items-center space-x-2 duration-200 text-black hover:bg-secondary"><span className="font-semibold">Create</span></button>}
+    trigger={
+      props => <span><Button type="light" props={{...props}}>Create</Button></span>}
     modal
         closeOnDocumentClick
     >
-      <form>
-        <label for="title">Leaderboard name:</label><br />
-        <input type="text" id="title" name="title" /><br />
-        <label for="name">Full name: </label><br />
-        <input type="text" id="fname" name="fname" /><br />
-        <label for="score">Score: </label><br />
-        <input type="text" id="score" name="score" /><br />
+      <form className="flex flex-col items-center">
+        <div className="flex flex-row items-center border-b border-primary py-2">
+          <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Leaderboard Name" aria-label="Leaderboard Name" />
+          <Button type="primary">Submit</Button>
+          <Button type="light">Cancel</Button>
+        </div>
       </form>
     </StyledPopup>
   )};
