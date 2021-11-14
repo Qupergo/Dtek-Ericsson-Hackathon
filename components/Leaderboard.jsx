@@ -11,13 +11,12 @@ const Leaderboard = ({ title, participants }) => {
           <th className="px-4 py-3">Nick</th>
           <th className="px-4 py-3">Score</th>
         </tr>
-      {participants.map((person) => {
+      {
+      participants.map((person, index) => {
+        index += 1
         return (
-          <Row person={person}/>
-        )
-
-      })
-      }
+          <Row person={{index,...person}}/>
+        )})}
       </table>
 
     </div>

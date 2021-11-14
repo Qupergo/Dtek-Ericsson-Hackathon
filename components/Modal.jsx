@@ -39,7 +39,6 @@ const Modal = ({board}) => {
     let board = {}
     let _persons = [...persons, person]
     board[title] = _persons
-    setPersons(_persons)
     updateBoard(board)
     handleCancel()
   }
