@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Button from "./Button"
 
 
-const Modal = () => { 
+const Modal = ({board}) => { 
 
   const [getTitle, setGetTitle] = useState(true)
 
