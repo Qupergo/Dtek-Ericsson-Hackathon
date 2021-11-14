@@ -40,11 +40,15 @@ const Modal = () => {
     let _persons = [...persons, person]
     board[title] = _persons
     setPersons(_persons)
+    updateBoard(board)
+    handleCancel()
+  }
+
+  const updateBoard = board => {
 
   }
 
-  const handleCancel = (event) => {
-    event.preventDefault()
+  const handleCancel = () => {
     setGetTitle(true)
     setTitle("")
     setPerson({})
@@ -57,13 +61,18 @@ const Modal = () => {
       props => <span><Button type="light" props={{...props}}>Create</Button></span>}
     modal
     >
+      {close =>  
+      <>
         {getTitle ? 
           <form className="flex flex-col items-center" onSubmit={getTitle ? handleTitleSubmission : handlePersonSubmission}>
             <div className="flex flex-row items-center border-b border-primary py-2">
               <label for="title"></label><br />
               <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Leaderboard Name" aria-label="Leaderboard Name" type="text" id="title" name="title" onChange={handleTitleChange} value={getTitle ? title : ""}/>
               <Button type="primary" onClick={handleTitleSubmission}>Next</Button>
-              <Button type="light" onClick={handleCancel}>Cancel</Button>
+              <Button type="light" onClick={() => {
+                handleCancel();
+                close();
+              }}>Cancel</Button>
             </div>
           </form>
               :
@@ -73,10 +82,12 @@ const Modal = () => {
               <label for="score">Score: </label><br />
               <input type="text" id="score" name="score" onChange={handlePersonChange} value={person.score || ""}/><br />
               <Button type="secondary" onClick={handlePersonSubmission}>Next</Button>
-              <Button type="primary" onClick={handleBoardSubmission}>Done</Button>
-              <Button type="light" onClick={handleCancel}>Cancel</Button>
+              <Button type="primary" onClick={() => {handleBoardSubmission(); close()}}>Done</Button>
+              <Button type="light" onClick={() => {handleCancel(); close()}}>Cancel</Button>
             </form>
         }
+      </>
+      }
     </StyledPopup>
   )};
 
