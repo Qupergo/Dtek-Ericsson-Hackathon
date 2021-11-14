@@ -39,7 +39,7 @@ const Modal = () => {
     let board = {}
     let _persons = [...persons, person]
     board[title] = _persons
-    setPersons(_persons)
+    setPersons([])
 
   }
 
