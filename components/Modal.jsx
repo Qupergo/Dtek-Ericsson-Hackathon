@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Button from "./Button"
 
 
-const Modal = ({board}) => { 
+const Modal = ({setData}) => { 
 
   const [getTitle, setGetTitle] = useState(true)
 
@@ -36,16 +36,11 @@ const Modal = ({board}) => {
   }
 
   const handleBoardSubmission = () => {
-    let board = {}
     let _persons = [...persons, person]
-    board[title] = _persons
-    updateBoard(board)
+    setData(title, _persons)
     handleCancel()
   }
 
-  const updateBoard = board => {
-
-  }
 
   const handleCancel = () => {
     setGetTitle(true)

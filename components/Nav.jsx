@@ -3,7 +3,7 @@ import Button from "./Button";
 import ButtonGroup from "./ButtonGroup";
 import Modal from "./Modal"
 
-export default function Nav() {
+export default function Nav({data, setData}) {
   return (
     <nav className="flex flex-row justify-between">
       <div className="flex flex-row space-x-5 items-center">
@@ -15,7 +15,7 @@ export default function Nav() {
         />
       </div>
       <ButtonGroup>
-        <Modal />
+        <Modal data={data} setData={setData}/>
 
         <Button
           href="#"
