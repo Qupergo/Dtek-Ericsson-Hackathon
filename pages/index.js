@@ -14,21 +14,21 @@ export default function Home() {
   const [data, setData] = useState(json);
 
   const handleSetData = (title, persons) => {
-    let newData = data;
+    let newData = {};
+    console.log(newData)
+
+    Object.keys(data).map(board => (newData[board] = data[board]))
     newData[title] = persons
-    setData(newData);
-    handleSort();
+
+    Object.keys(newData).map(board => (
+      newData[board].sort((a,b) => {
+        return b.score - a.score
+      })))
+      
+    console.log(newData)
+    setData(newData)  
   }
 
-  const handleSort = () => {
-    Object.keys(data).map(board => (
-      data[board].sort((a,b) => {
-        return b.score - a.score
-  })))
-    let newData = data
-    console.log(newData)
-    setData(newData)
-  }
 
   return (
     <main className="flex flex-col items-center mx-4 md:mx-8 mt-8 mb-16">

@@ -7,16 +7,48 @@
     {
       "name": "Charter",
       "score": 40
+    },
+    {
+      "name": "Bottle",
+      "score": 50
+    },
+    {
+      "name": "Bamse",
+      "score": 999
+    },
+    {
+      "name": "Joe",
+      "score": 23
+    },
+    {
+      "name": "Jane",
+      "score": 48
     }
     ],
     "Smash Turnering": [
     {
-      "name": "Bottle",
-      "score": 30
+      "name": "Tian",
+      "score": 100
     },
     {
-      "name": "Tian",
-      "score": 39
+      "name": "Bottle",
+      "score": 50
+    },
+    {
+      "name": "Charter",
+      "score": 75
+    },
+    {
+      "name": "Joe",
+      "score": 10
+    },
+    {
+      "name": "Jane",
+      "score": 25
+    },
+    {
+      "name": "Alvar",
+      "score": 87
     }
     ]
   }
