@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 export default function Button({ children, type, props, onClick}) {
   const types = {

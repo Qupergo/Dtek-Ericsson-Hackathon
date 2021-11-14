@@ -1,4 +1,4 @@
-import {useImperativeHandle, useState} from 'react';
+import {useState} from 'react';
 
 import Nav from "../components/Nav";
 import Header from "../components/Header";
@@ -15,7 +15,6 @@ export default function Home() {
 
   const handleSetData = (title, persons) => {
     let newData = {};
-    console.log(newData)
 
     Object.keys(data).map(board => (newData[board] = data[board]))
     newData[title] = persons
@@ -25,7 +24,6 @@ export default function Home() {
         return b.score - a.score
       })))
       
-    console.log(newData)
     setData(newData)  
   }
 

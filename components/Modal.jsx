@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components'
 import Button from "./Button"
-import ButtonGroup from './ButtonGroup';
 
 
 const Modal = ({setData}) => { 

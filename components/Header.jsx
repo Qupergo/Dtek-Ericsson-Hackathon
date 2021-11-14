@@ -1,6 +1,4 @@
 import Heading from "./Heading";
-import Button from "./Button";
-import ButtonGroup from "./ButtonGroup";
 
 export default function Header() {
   return (
