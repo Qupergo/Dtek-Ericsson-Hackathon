@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components'
 import Button from "./Button"
+import ButtonGroup from './ButtonGroup';
 
 
 const Modal = ({setData}) => { 
@@ -71,13 +72,17 @@ const Modal = ({setData}) => {
           </form>
               :
             <form>
-              <label for="name">Full name: </label><br />
-              <input type="text" id="name" name="name" onChange={handlePersonChange} value={person.name || ""} /><br />
-              <label for="score">Score: </label><br />
-              <input type="text" id="score" name="score" onChange={handlePersonChange} value={person.score || ""}/><br />
-              <Button type="secondary" onClick={handlePersonSubmission}>Next</Button>
-              <Button type="primary" onClick={() => {handleBoardSubmission(); close()}}>Done</Button>
-              <Button type="light" onClick={() => {handleCancel(); close()}}>Cancel</Button>
+              <div className="">
+                <input className="shadow-md rounded appearance-none bg-gray-100 border-none w-full text-gray-700 mb-2 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Nick" aria-label="Nick" type="text" id="name" name="name" onChange={handlePersonChange} value={person.name || ""} /><br />
+                <input className="shadow-md rounded appearance-none bg-gray-100 border-none w-full text-gray-700 mb-4 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Score" aria-label="Score" type="text" id="score" name="score" onChange={handlePersonChange} value={person.score || ""} /><br />
+              </div>
+                <div className="w-full flex flex-row justify-between items-center space-x-2">
+                  <div className="flex flex-row space-x-2">
+                  <Button type="secondary" onClick={handlePersonSubmission}>Next</Button>
+                  <Button type="primary" onClick={() => {handleBoardSubmission(); close()}}>Done</Button>
+                  </div>
+                  <Button type="light" onClick={() => {handleCancel(); close()}}>Cancel</Button>
+                </div>
             </form>
         }
       </>
