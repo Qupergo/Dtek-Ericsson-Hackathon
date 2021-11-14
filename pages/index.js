@@ -19,7 +19,7 @@ export default function Home() {
       <Nav />
       <Header />
       <div className="flex flex-col items-center">
-      <LeaderboardGroup data={data}/>
+        <LeaderboardGroup data={data}/>
       </div>
       <Footer />
 

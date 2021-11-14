@@ -10,7 +10,7 @@ export default function LeaderboardGroup({data}) {
       data[board].sort((a,b) => {
         return b.score - a.score
   })))}
-    return <div className="flex flex-row items-center">
+    return <div className="w-full flex flex-row items-center">
         {Object.keys(data).map(board => (
 
           <Leaderboard title={board} participants={data[board]}/>
